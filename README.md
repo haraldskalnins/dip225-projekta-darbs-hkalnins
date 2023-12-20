@@ -1,0 +1,1 @@
+# dip225-projekta-darbs-hkalnins
