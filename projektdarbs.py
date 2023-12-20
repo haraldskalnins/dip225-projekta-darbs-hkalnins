@@ -4,8 +4,6 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 import time
 from openpyxl import Workbook
-from openpyxl.drawing.image import Image
-import urllib.request
 
 def run_selenium(product):
     service = Service()
@@ -45,17 +43,6 @@ def run_selenium(product):
         link = offer.find_element(By.XPATH, './/a[@itemprop="url"]').get_attribute('href')
         data.append([price, title, link])
         ws.append([price, title, link])
-        image = offer.find_element(By.XPATH, './/img[@itemprop="image"]')
-        image_url = image.get_attribute('src')
-        image_file = f'{product}_{title}.webp'
-        urllib.request.urlretrieve(image_url, image_file)
-        img = PilImage.open(image_file).convert('RGB')
-        png_image_file = f'{product}_{title}.png'
-        img.save(png_image_file, 'PNG')
-        img = Image(png_image_file)
-        ws.column_dimensions['D'].width = img.width // 6
-        ws.row_dimensions[ws.max_row].height = img.height
-        ws.add_image(img, f'D{ws.max_row}')
 
     for column in ws.columns:
         max_length = 0
