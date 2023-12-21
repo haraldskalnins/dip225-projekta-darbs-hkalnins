@@ -31,8 +31,12 @@ This repository contains a Python script that automates the process of searching
 To run a script, simply execute it with Python. For example:
 
 This will prompt you to enter a product and a minimum price. The script will then search for the product on the salidzini.lv website and output the results to an Excel file.
-Note: If you want to change the web browser you are running the script you will need to change in the script the browser you are using in the lines 
-
+Note: If you want to change the web browser you are running the script you will need to change in the script the browser you are using in the lines.
+    option = webdriver.ChromeOptions()
+    driver = webdriver.Chrome(service=service, options=option)
+TO 
+ option = webdriver.____Options()
+ driver = webdriver._____(service=service, options=option)
 ## Output
 
 The output of the script is an Excel file that is named as the word the User inputted and it is filled with the following columns:
