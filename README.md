@@ -57,3 +57,6 @@ Excel fails ir saglabāts tajā pašā mapē, kurā saglabāts ir pats skripts.
 1.https://www.selenium.dev/documentation/webdriver/elements/locators/ Resurss tika izmantots, lai varētu atrast nepieciešamos mājaslapas elementus pēc XPATH, jo pēc ID bija neiespējami atpazīt piedāvājumus.
 2.https://www.selenium.dev/documentation/webdriver/browsers/ Resurss tika izmantots lai dokumentācijā uzrakstītu par, ja ir nepieciešams nomainīt interneta pārlūku.
 3.https://stackoverflow.com/questions/13197574/openpyxl-adjust-column-width-size Resurss tika izmantots, lai skripts automātiski nomainītu Excel kolonnas platumu, balstoties uz jebkurā rindā esošo garāko simbolu kopu. Iekš Excel manuāli tas ir izdarāms nospiežot dubultklikšķi uz platuma maināmās kolonnas malas.
+
+## Piezīmes
+Funkcija, kas maina šūnas platumu strādā pēc tā, ka tas pēc for cikla atlasa katru kolonnu, tad izvēlās katras šūnas kolonnu. Tad ir iekšējais cikls, kas izvēlās vēlreiz katru šūnu iekš kolonnas, pēc kā tā pielāgo katras kolonnas dimensijas, jeb platumu un saglabā šo .xlsx failu.
